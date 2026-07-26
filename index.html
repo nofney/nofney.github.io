@@ -1,15 +1,453 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>My Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nofney | Roblox Developer</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family:Inter, sans-serif;
+    background:#080808;
+    color:white;
+    overflow-x:hidden;
+}
+
+body::before {
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(
+        rgba(5,5,5,.75),
+        rgba(5,5,5,.95)
+    ),
+    url("background.jpg");
+
+    background-size:cover;
+    background-position:center;
+    z-index:-1;
+}
+
+
+.container {
+    max-width:1100px;
+    margin:auto;
+    padding:40px 25px;
+}
+
+
+.hero {
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+
+h1 {
+    font-size:80px;
+    font-weight:800;
+    letter-spacing:-4px;
+}
+
+
+.gradient {
+    background:linear-gradient(90deg,#ffffff,#888);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+
+.subtitle {
+    margin-top:15px;
+    font-size:24px;
+    color:#aaa;
+}
+
+
+.button {
+    display:inline-block;
+    margin-top:35px;
+    padding:14px 28px;
+    border:1px solid #333;
+    border-radius:30px;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.button:hover {
+    background:white;
+    color:black;
+}
+
+
+section {
+    margin:120px 0;
+}
+
+
+.title {
+    font-size:42px;
+    margin-bottom:35px;
+}
+
+
+.card {
+    background:rgba(20,20,20,.65);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:30px;
+    margin-bottom:20px;
+}
+
+
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+
+.stat {
+    text-align:center;
+}
+
+
+.stat h2 {
+    font-size:45px;
+}
+
+
+.stat p {
+    color:#888;
+}
+
+
+
+.project h3 {
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+
+.project span {
+    color:#999;
+}
+
+
+.skill {
+    display:inline-block;
+    padding:10px 18px;
+    margin:5px;
+    background:#151515;
+    border-radius:30px;
+    border:1px solid #292929;
+}
+
+
+footer {
+    text-align:center;
+    padding:50px;
+    color:#777;
+}
+
+
+@media(max-width:700px){
+
+h1 {
+    font-size:55px;
+}
+
+.subtitle {
+    font-size:18px;
+}
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
-<h1>Hello!</h1>
 
-<p>This is my portfolio.</p>
+<div class="container">
+
+
+<div class="hero">
+
+<h1>
+I'm <span class="gradient">Nofney</span>
+</h1>
+
+<p class="subtitle">
+Roblox Developer • Game Designer • Animator
+</p>
+
+<p style="margin-top:25px;color:#aaa;max-width:600px">
+16 year old developer specializing in Roblox experiences,
+game design, animation and technical art.
+Currently working as a Junior Developer at nWave.
+</p>
+
+
+<a class="button" href="https://github.com/nofney">
+View GitHub
+</a>
+
+
+</div>
+
+
+
+<section>
+
+<h2 class="title">
+About Me
+</h2>
+
+
+<div class="card">
+
+<p>
+I am a Roblox developer focused on creating immersive gameplay,
+visual design and technical systems. I combine programming,
+animation and 3D art to create polished experiences.
+
+<br><br>
+
+Currently I work with nWave as a Junior Developer, where I am
+learning professional workflows including Unreal Engine 5,
+animation pipelines and advanced development practices.
+</p>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2 class="title">
+Skills
+</h2>
+
+
+<div class="card">
+
+<span class="skill">Roblox Studio</span>
+<span class="skill">Lua</span>
+<span class="skill">Python</span>
+<span class="skill">Unreal Engine 5</span>
+<span class="skill">Blender</span>
+<span class="skill">DaVinci Resolve</span>
+<span class="skill">3D Animation</span>
+<span class="skill">Game Design</span>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2 class="title">
+Experience
+</h2>
+
+
+<div class="card">
+
+<h3>
+nWave — Junior Developer
+</h3>
+
+<p style="color:#aaa;margin-top:10px">
+Currently learning professional development,
+animation workflows and Unreal Engine pipelines.
+</p>
+
+</div>
+
+
+</section>
+
+
+
+<section>
+
+<h2 class="title">
+Projects
+</h2>
+
+
+
+<div class="project card">
+
+<h3>
+Blade Ball
+</h3>
+
+<p>
+<b>Roles:</b>
+Art Designer of Prince Blade & Haunted Harvester
+<br>
+Scripter & Designer of the 2023 Halloween Battlepass
+</p>
+
+</div>
+
+
+
+
+<div class="project card">
+
+<h3>
+Riotfall
+</h3>
+
+<p>
+<b>Roles:</b>
+Ex Moderator,
+Thumbnail Art Designer
+</p>
+
+</div>
+
+
+
+
+<div class="project card">
+
+<h3>
+Bodycam
+</h3>
+
+<p>
+<b>Roles:</b>
+Ex Moderator,
+Thumbnail Art Designer,
+First Person Animator
+</p>
+
+</div>
+
+
+
+</section>
+
+
+
+
+<section>
+
+<h2 class="title">
+Statistics
+</h2>
+
+
+<div class="grid">
+
+
+<div class="card stat">
+
+<h2>
+3+
+</h2>
+
+<p>
+Major Projects
+</p>
+
+</div>
+
+
+
+<div class="card stat">
+
+<h2>
+5+
+</h2>
+
+<p>
+Development Skills
+</p>
+
+</div>
+
+
+
+<div class="card stat">
+
+<h2>
+2023+
+</h2>
+
+<p>
+Development Experience
+</p>
+
+</div>
+
+
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2 class="title">
+Contact
+</h2>
+
+
+<div class="card">
+
+<p>
+Interested in working together?
+</p>
+
+<br>
+
+<a class="button" href="https://github.com/nofney">
+GitHub
+</a>
+
+</div>
+
+
+</section>
+
+
+
+<footer>
+
+© 2026 Nofney
+
+</footer>
+
+
+</div>
+
 
 </body>
-
 </html>

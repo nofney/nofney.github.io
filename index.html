@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,172 +11,320 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
 
-* {
+
+*{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-body {
-    font-family:Inter, sans-serif;
-    background:#080808;
+
+body{
+
+    font-family:Inter,Arial,sans-serif;
+    background:#071426;
     color:white;
-    overflow-x:hidden;
+
 }
 
-body::before {
+
+
+.hero{
+
+    height:100vh;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+
+}
+
+
+.hero::before{
+
     content:"";
-    position:fixed;
+    position:absolute;
     inset:0;
+
     background:
     linear-gradient(
-        rgba(5,5,5,.75),
-        rgba(5,5,5,.95)
+        to bottom,
+        rgba(65,170,255,.55),
+        rgba(7,20,38,.95)
     ),
     url("background.jpg");
 
     background-size:cover;
     background-position:center;
+
     z-index:-1;
+
 }
 
 
-.container {
-    max-width:1100px;
-    margin:auto;
-    padding:40px 25px;
+
+.profile{
+
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    object-fit:cover;
+
+    border:5px solid rgba(255,255,255,.25);
+
+    box-shadow:
+    0 0 40px rgba(80,170,255,.5);
+
 }
 
 
-.hero {
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-}
 
+.hero h1{
 
-h1 {
-    font-size:80px;
+    margin-top:25px;
+
+    font-size:75px;
     font-weight:800;
-    letter-spacing:-4px;
+
 }
 
 
-.gradient {
-    background:linear-gradient(90deg,#ffffff,#888);
-    -webkit-background-clip:text;
-    color:transparent;
+.hero h1 span{
+
+    color:#7bc8ff;
+
 }
 
 
-.subtitle {
+.hero p{
+
     margin-top:15px;
-    font-size:24px;
-    color:#aaa;
+    color:#cbdcff;
+    font-size:22px;
+
 }
 
 
-.button {
+
+.button{
+
     display:inline-block;
+
     margin-top:35px;
-    padding:14px 28px;
-    border:1px solid #333;
+
+    padding:14px 30px;
+
     border-radius:30px;
-    color:white;
+
+    background:#fff;
+
+    color:#111;
+
     text-decoration:none;
+
+    font-weight:600;
+
     transition:.3s;
-}
 
-.button:hover {
-    background:white;
-    color:black;
 }
 
 
-section {
-    margin:120px 0;
+.button:hover{
+
+    transform:translateY(-5px);
+
 }
 
 
-.title {
-    font-size:42px;
-    margin-bottom:35px;
+
+.container{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:70px 25px;
+
 }
 
 
-.card {
-    background:rgba(20,20,20,.65);
-    backdrop-filter:blur(12px);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:20px;
-    padding:30px;
-    margin-bottom:20px;
-}
 
+.title{
 
-.grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-
-.stat {
-    text-align:center;
-}
-
-
-.stat h2 {
     font-size:45px;
+
+    margin-bottom:35px;
+
 }
 
 
-.stat p {
-    color:#888;
+
+.about{
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    backdrop-filter:blur(10px);
+
+    color:#dbe8ff;
+
 }
 
 
 
-.project h3 {
-    font-size:25px;
-    margin-bottom:10px;
+.games{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
 }
 
 
-.project span {
-    color:#999;
+
+.game{
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(60,150,255,.25),
+        rgba(10,25,50,.95)
+    );
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    transition:.35s;
+
 }
 
 
-.skill {
-    display:inline-block;
+
+.game:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+.game img{
+
+    width:100%;
+
+    height:190px;
+
+    object-fit:cover;
+
+}
+
+
+
+.game-content{
+
+    padding:25px;
+
+}
+
+
+
+.game h2{
+
+    font-size:28px;
+
+}
+
+
+
+.stats{
+
+    margin-top:15px;
+
+    color:#9ecfff;
+
+}
+
+
+
+.role{
+
+    margin-top:20px;
+
+    color:#d8e7ff;
+
+    line-height:1.6;
+
+}
+
+
+
+.skills{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+
+
+.skill{
+
     padding:10px 18px;
-    margin:5px;
-    background:#151515;
+
+    background:#102642;
+
     border-radius:30px;
-    border:1px solid #292929;
+
+    color:#b9dbff;
+
 }
 
 
-footer {
+
+footer{
+
     text-align:center;
-    padding:50px;
-    color:#777;
+
+    padding:40px;
+
+    color:#789;
+
 }
+
 
 
 @media(max-width:700px){
 
-h1 {
-    font-size:55px;
-}
+.hero h1{
 
-.subtitle {
-    font-size:18px;
-}
+    font-size:45px;
 
 }
+
+.profile{
+
+    width:130px;
+    height:130px;
+
+}
+
+}
+
+
 
 </style>
 
@@ -185,257 +334,314 @@ h1 {
 <body>
 
 
-<div class="container">
+
+<section class="hero">
 
 
-<div class="hero">
+<div>
+
+
+<img class="profile" src="profile.png">
+
 
 <h1>
-I'm <span class="gradient">Nofney</span>
+<span>Nofney</span>
 </h1>
 
-<p class="subtitle">
+
+<p>
 Roblox Developer • Game Designer • Animator
 </p>
 
-<p style="margin-top:25px;color:#aaa;max-width:600px">
-16 year old developer specializing in Roblox experiences,
-game design, animation and technical art.
-Currently working as a Junior Developer at nWave.
+
+<p>
+Junior Developer at nWave
 </p>
 
 
-<a class="button" href="https://github.com/nofney">
-View GitHub
+
+<a class="button"
+href="https://github.com/nofney">
+
+GitHub
+
 </a>
 
 
 </div>
 
 
+</section>
 
-<section>
+
+
+
+
+<div class="container">
+
+
 
 <h2 class="title">
 About Me
 </h2>
 
 
-<div class="card">
+<div class="about">
 
-<p>
-I am a Roblox developer focused on creating immersive gameplay,
-visual design and technical systems. I combine programming,
-animation and 3D art to create polished experiences.
+I'm Nofney, a Roblox developer specializing in gameplay,
+design, scripting and technical art.
 
 <br><br>
 
-Currently I work with nWave as a Junior Developer, where I am
-learning professional workflows including Unreal Engine 5,
-animation pipelines and advanced development practices.
-</p>
+I currently work as a Junior Developer at nWave,
+where I am learning professional development workflows,
+animation and Unreal Engine 5.
 
 </div>
 
-</section>
 
 
 
-<section>
 
-<h2 class="title">
+
+
+<h2 class="title" style="margin-top:100px;">
+Games Worked On
+</h2>
+
+
+
+<div class="games">
+
+
+
+<div class="game">
+
+
+<img src="images/bladeball.png">
+
+
+<div class="game-content">
+
+<h2>
+Blade Ball
+</h2>
+
+
+<div class="stats">
+
+👁 Visits: XXXM+
+
+<br>
+
+⭐ Favorites: XXXK+
+
+</div>
+
+
+<div class="role">
+
+<b>Role:</b>
+
+<br>
+
+• Art Designer — Prince Blade
+
+<br>
+
+• Art Designer — Haunted Harvester
+
+<br>
+
+• Scripter & Designer — 2023 Halloween Battlepass
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+<div class="game">
+
+
+<img src="images/riotfall.png">
+
+
+<div class="game-content">
+
+
+<h2>
+Riotfall
+</h2>
+
+
+<div class="stats">
+
+👁 Visits: XXXM+
+
+<br>
+
+⭐ Favorites: XXXK+
+
+</div>
+
+
+
+<div class="role">
+
+<b>Role:</b>
+
+<br>
+
+• Ex Moderator
+
+<br>
+
+• Thumbnail Art Designer
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+<div class="game">
+
+
+<img src="images/bodycam.png">
+
+
+<div class="game-content">
+
+
+<h2>
+Bodycam
+</h2>
+
+
+<div class="stats">
+
+👁 Visits: XXXM+
+
+<br>
+
+⭐ Favorites: XXXK+
+
+</div>
+
+
+
+<div class="role">
+
+
+<b>Role:</b>
+
+<br>
+
+• Ex Moderator
+
+<br>
+
+• Thumbnail Art Designer
+
+<br>
+
+• First Person Animator
+
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<h2 class="title" style="margin-top:100px;">
 Skills
 </h2>
 
 
-<div class="card">
 
-<span class="skill">Roblox Studio</span>
-<span class="skill">Lua</span>
-<span class="skill">Python</span>
-<span class="skill">Unreal Engine 5</span>
-<span class="skill">Blender</span>
-<span class="skill">DaVinci Resolve</span>
-<span class="skill">3D Animation</span>
-<span class="skill">Game Design</span>
-
-</div>
-
-</section>
+<div class="skills">
 
 
-
-<section>
-
-<h2 class="title">
-Experience
-</h2>
-
-
-<div class="card">
-
-<h3>
-nWave — Junior Developer
-</h3>
-
-<p style="color:#aaa;margin-top:10px">
-Currently learning professional development,
-animation workflows and Unreal Engine pipelines.
-</p>
-
+<div class="skill">
+Roblox Studio
 </div>
 
 
-</section>
+<div class="skill">
+Lua
+</div>
 
 
-
-<section>
-
-<h2 class="title">
-Projects
-</h2>
+<div class="skill">
+Python
+</div>
 
 
+<div class="skill">
+Blender
+</div>
 
-<div class="project card">
 
-<h3>
-Blade Ball
-</h3>
+<div class="skill">
+Unreal Engine 5
+</div>
 
-<p>
-<b>Roles:</b>
-Art Designer of Prince Blade & Haunted Harvester
-<br>
-Scripter & Designer of the 2023 Halloween Battlepass
-</p>
+
+<div class="skill">
+DaVinci Resolve
+</div>
+
+
+<div class="skill">
+Animation
+</div>
+
+
+<div class="skill">
+Game Design
+</div>
+
 
 </div>
 
 
 
 
-<div class="project card">
-
-<h3>
-Riotfall
-</h3>
-
-<p>
-<b>Roles:</b>
-Ex Moderator,
-Thumbnail Art Designer
-</p>
-
-</div>
-
-
-
-
-<div class="project card">
-
-<h3>
-Bodycam
-</h3>
-
-<p>
-<b>Roles:</b>
-Ex Moderator,
-Thumbnail Art Designer,
-First Person Animator
-</p>
-
-</div>
-
-
-
-</section>
-
-
-
-
-<section>
-
-<h2 class="title">
-Statistics
-</h2>
-
-
-<div class="grid">
-
-
-<div class="card stat">
-
-<h2>
-3+
-</h2>
-
-<p>
-Major Projects
-</p>
-
-</div>
-
-
-
-<div class="card stat">
-
-<h2>
-5+
-</h2>
-
-<p>
-Development Skills
-</p>
-
-</div>
-
-
-
-<div class="card stat">
-
-<h2>
-2023+
-</h2>
-
-<p>
-Development Experience
-</p>
-
-</div>
-
 
 
 </div>
 
-</section>
-
-
-
-<section>
-
-<h2 class="title">
-Contact
-</h2>
-
-
-<div class="card">
-
-<p>
-Interested in working together?
-</p>
-
-<br>
-
-<a class="button" href="https://github.com/nofney">
-GitHub
-</a>
-
-</div>
-
-
-</section>
 
 
 
@@ -446,8 +652,8 @@ GitHub
 </footer>
 
 
-</div>
 
 
 </body>
+
 </html>

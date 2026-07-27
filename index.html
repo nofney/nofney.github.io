@@ -51,8 +51,9 @@ body{
     background:
     linear-gradient(
         to bottom,
-        rgba(65,170,255,.55),
-        rgba(7,20,38,.95)
+        rgba(65,170,255,.40) 0%,
+        rgba(40,95,155,.35) 40%,
+        rgba(7,20,38,.90) 100%
     ),
     url("background.jpg");
 
@@ -312,19 +313,53 @@ footer{
 
 
 
-@media(max-width:700px){
+@media (max-width:700px){
+
+.hero{
+    padding:0 20px;
+}
 
 .hero h1{
+    font-size:48px;
+}
 
-    font-size:45px;
-
+.hero p{
+    font-size:18px;
+    line-height:1.5;
 }
 
 .profile{
-
     width:130px;
     height:130px;
+}
 
+.title{
+    font-size:34px;
+}
+
+.about{
+    font-size:16px;
+    line-height:1.7;
+}
+
+.contributed .heading{
+    font-size:26px;
+}
+
+.contributed .statsline{
+    font-size:22px;
+}
+
+.game h2{
+    font-size:24px;
+}
+
+.stats{
+    font-size:15px;
+}
+
+.button{
+    padding:12px 24px;
 }
 
 }

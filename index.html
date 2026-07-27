@@ -132,6 +132,9 @@ body{
 }
 
 
+.button-outline{display:inline-block;margin-top:35px;margin-left:14px;padding:14px 30px;border-radius:30px;border:2px solid rgba(255,255,255,.85);background:transparent;color:#fff;text-decoration:none;font-weight:600;transition:.3s;}
+.button-outline:hover{background:rgba(255,255,255,.12);transform:translateY(-5px);}
+
 .button:hover{
 
     transform:translateY(-5px);
@@ -368,23 +371,20 @@ footer{
 
 
 
-.contributed{
-    text-align:center;
-    margin:-5px 0 45px;
+
+.contributed{text-align:center;margin:-5px 0 45px;}
+.contributed .heading{font-size:20px;font-weight:600;color:#aeb9c8;margin-bottom:18px;}
+.stats-grid{display:flex;justify-content:center;gap:80px;}
+.stat .number{font-size:40px;font-weight:700;color:#fff;}
+.stat .label{font-size:18px;color:#aeb9c8;margin-top:4px;}
+@media (max-width:700px){
+.stats-grid{display:block;}
+.stat{margin-bottom:18px;}
+.contributed .heading{font-size:17px;}
+.stat .number{font-size:34px;}
+.stat .label{font-size:15px;}
 }
-.contributed .heading{
-    font-size:32px;
-    font-weight:700;
-    color:#fff;
-    margin-bottom:8px;
-}
-.contributed .statsline{
-    font-size:27px;
-    font-weight:600;
-}
-.contributed .highlight{color:#fff;}
-.contributed .muted{color:#b7c2d3;}
-.contributed .separator{color:#8fa3bc;margin:0 12px;}
+
 
 </style>
 
@@ -429,6 +429,8 @@ GitHub
 
 </a>
 
+<a class="button-outline" href="mailto:nnofney@gmail.com">Contact Me</a>
+
 
 </div>
 
@@ -472,14 +474,11 @@ Past Experience
 </h2>
 
 <div class="contributed">
-    <div class="heading">Contributed To:</div>
-    <div class="statsline">
-        <span class="highlight">6.5B+</span>
-        <span class="muted">Play Sessions</span>
-        <span class="separator">│</span>
-        <span class="highlight">14M+</span>
-        <span class="muted">Favorites</span>
-    </div>
+<div class="heading">Contributed To:</div>
+<div class="stats-grid">
+<div class="stat"><div class="number">6.5B+</div><div class="label">Play Sessions</div></div>
+<div class="stat"><div class="number">14M+</div><div class="label">Favorites</div></div>
+</div>
 </div>
 
 <div class="games">

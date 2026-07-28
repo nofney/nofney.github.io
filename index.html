@@ -51,9 +51,8 @@ body{
     background:
     linear-gradient(
         to bottom,
-        rgba(65,170,255,.40) 0%,
-        rgba(40,95,155,.35) 40%,
-        rgba(7,20,38,.90) 100%
+        rgba(65,170,255,.55),
+        rgba(7,20,38,.95)
     ),
     url("background.jpg");
 
@@ -131,9 +130,6 @@ body{
 
 }
 
-
-.button-outline{display:inline-block;margin-top:35px;margin-left:14px;padding:14px 30px;border-radius:30px;border:2px solid rgba(255,255,255,.85);background:transparent;color:#fff;text-decoration:none;font-weight:600;transition:.3s;}
-.button-outline:hover{background:rgba(255,255,255,.12);transform:translateY(-5px);}
 
 .button:hover{
 
@@ -316,74 +312,23 @@ footer{
 
 
 
-@media (max-width:700px){
-
-.hero{
-    padding:0 20px;
-}
+@media(max-width:700px){
 
 .hero h1{
-    font-size:48px;
-}
 
-.hero p{
-    font-size:18px;
-    line-height:1.5;
+    font-size:45px;
+
 }
 
 .profile{
+
     width:130px;
     height:130px;
-}
 
-.title{
-    font-size:34px;
-}
-
-.about{
-    font-size:16px;
-    line-height:1.7;
-}
-
-.contributed .heading{
-    font-size:26px;
-}
-
-.contributed .statsline{
-    font-size:22px;
-}
-
-.game h2{
-    font-size:24px;
-}
-
-.stats{
-    font-size:15px;
-}
-
-.button{
-    padding:12px 24px;
 }
 
 }
 
-
-
-
-
-
-.contributed{text-align:center;margin:-5px 0 45px;}
-.contributed .heading{font-size:20px;font-weight:600;color:#aeb9c8;margin-bottom:18px;}
-.stats-grid{display:flex;justify-content:center;gap:80px;}
-.stat .number{font-size:40px;font-weight:700;color:#fff;}
-.stat .label{font-size:18px;color:#aeb9c8;margin-top:4px;}
-@media (max-width:700px){
-.stats-grid{display:block;}
-.stat{margin-bottom:18px;}
-.contributed .heading{font-size:17px;}
-.stat .number{font-size:34px;}
-.stat .label{font-size:15px;}
-}
 
 
 </style>
@@ -429,8 +374,6 @@ GitHub
 
 </a>
 
-<a class="button-outline" href="mailto:nnofney@gmail.com">Contact Me</a>
-
 
 </div>
 
@@ -473,13 +416,7 @@ animation, Blender and Unreal Engine 5.
 Past Experience
 </h2>
 
-<div class="contributed">
-<div class="heading">Contributed To:</div>
-<div class="stats-grid">
-<div class="stat"><div class="number">6.5B+</div><div class="label">Play Sessions</div></div>
-<div class="stat"><div class="number">14M+</div><div class="label">Favourites</div></div>
-</div>
-</div>
+
 
 <div class="games">
 
@@ -684,6 +621,20 @@ Game Design
 
 
 
+<script>
+const games=[{id:13772394625,card:0},{id:7796842481,card:1},{id:16404660684,card:2}];
+async function load(){
+ const cards=document.querySelectorAll('.game');
+ const ids=games.map(g=>g.id);
+ const uni=await fetch('https://apis.roblox.com/universes/v1/places:batch',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({placeIds:ids})}).then(r=>r.json()).catch(()=>null);
+ const map={}; if(uni&&uni.universeMappings) uni.universeMappings.forEach(m=>map[m.placeId]=m.universeId);
+ const thumbs=await fetch('https://thumbnails.roblox.com/v1/games/icons?universeIds='+ids.map(i=>map[i]).join(',')+'&returnPolicy=PlaceHolder&size=512x512&format=Png&isCircular=false').then(r=>r.json()).catch(()=>null);
+ const gamesData=await fetch('https://games.roblox.com/v1/games?universeIds='+ids.map(i=>map[i]).join(',')).then(r=>r.json()).catch(()=>null);
+ const tmap={}; thumbs?.data?.forEach(x=>tmap[x.targetId]=x.imageUrl);
+ gamesData?.data?.forEach((g,i)=>{const c=cards[i]; if(!c)return; c.querySelector('h2').textContent=g.name; c.querySelector('img').src=tmap[g.id]||c.querySelector('img').src; c.querySelector('.stats').innerHTML='👁️ Visits: '+g.visits.toLocaleString()+'<br><br>🟢 Active Players: '+g.playing.toLocaleString()+'<br><br>⭐ Favorites: '+g.favoritedCount.toLocaleString();});
+}
+load();
+</script>
 </body>
 
 </html>

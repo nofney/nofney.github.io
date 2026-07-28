@@ -622,19 +622,36 @@ Game Design
 
 
 <script>
-const games=[{id:13772394625,card:0},{id:7796842481,card:1},{id:16404660684,card:2}];
-async function load(){
- const cards=document.querySelectorAll('.game');
- const ids=games.map(g=>g.id);
- const uni=await fetch('https://apis.roblox.com/universes/v1/places:batch',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({placeIds:ids})}).then(r=>r.json()).catch(()=>null);
- const map={}; if(uni&&uni.universeMappings) uni.universeMappings.forEach(m=>map[m.placeId]=m.universeId);
- const thumbs=await fetch('https://thumbnails.roblox.com/v1/games/icons?universeIds='+ids.map(i=>map[i]).join(',')+'&returnPolicy=PlaceHolder&size=512x512&format=Png&isCircular=false').then(r=>r.json()).catch(()=>null);
- const gamesData=await fetch('https://games.roblox.com/v1/games?universeIds='+ids.map(i=>map[i]).join(',')).then(r=>r.json()).catch(()=>null);
- const tmap={}; thumbs?.data?.forEach(x=>tmap[x.targetId]=x.imageUrl);
- gamesData?.data?.forEach((g,i)=>{const c=cards[i]; if(!c)return; c.querySelector('h2').textContent=g.name; c.querySelector('img').src=tmap[g.id]||c.querySelector('img').src; c.querySelector('.stats').innerHTML='👁️ Visits: '+g.visits.toLocaleString()+'<br><br>🟢 Active Players: '+g.playing.toLocaleString()+'<br><br>⭐ Favorites: '+g.favoritedCount.toLocaleString();});
+async function load() {
+
+    const cards = document.querySelectorAll(".game");
+
+    const response = await fetch(
+        "https://nofney-api.lukemilky143.workers.dev/"
+    );
+
+    const games = await response.json();
+
+    games.forEach((game, i) => {
+
+        const card = cards[i];
+
+        if (!card) return;
+
+        card.querySelector("h2").textContent = game.name;
+
+        card.querySelector("img").src = game.thumbnail;
+
+        card.querySelector(".stats").innerHTML =
+            `👁️ Visits: ${game.visits.toLocaleString()}<br><br>` +
+            `🟢 Active Players: ${game.playing.toLocaleString()}<br><br>` +
+            `⭐ Favorites: ${game.favorites.toLocaleString()}`;
+    });
+
 }
+
 load();
 </script>
-</body>
 
+</body>
 </html>
